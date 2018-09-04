@@ -396,7 +396,7 @@ extern "C" void* ThreadStats(void*) {
     }
     printf("%s %i/%i available (%i tried in %is, %i new, %i active), %i banned; %llu DNS requests, %llu db queries", c, stats.nGood, stats.nAvail, stats.nTracked, stats.nAge, stats.nNew, stats.nAvail - stats.nTracked - stats.nNew, stats.nBanned, (unsigned long long)requests, (unsigned long long)queries);
 
-    FILE *ff = fopen("nodescount.log", "w");
+    FILE *ff = fopen("/var/www/html/nodescount.log", "w");
     fprintf(ff,"%i\n", stats.nAvail);   
     fclose(ff);
 
